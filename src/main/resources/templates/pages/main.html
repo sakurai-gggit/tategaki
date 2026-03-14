@@ -6,10 +6,10 @@
 		<h1>main</h1>
 	</main>
 	<aside layout:fragment="navi">
-		<nav>
+		<nav th:fragment="menu">
 			<ul>
 				<li>
-					<a href="#">登録</a>
+					<a th:href="@{/upload}">登録</a>
 				</li>
 				<li>
 					<a href="#">編集</a>

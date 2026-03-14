@@ -15,4 +15,9 @@ public class PagesController {
 	public String mainPage() {
 		return "pages/main";
 	}
+
+	@GetMapping("/upload")
+	public String uploadPage() {
+		return "pages/upload";
+	}
 }
