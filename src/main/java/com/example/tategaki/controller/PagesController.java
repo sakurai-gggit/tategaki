@@ -10,4 +10,9 @@ public class PagesController {
 	public String index() {
 		return "pages/index";
 	}
+
+	@GetMapping("/main")
+	public String mainPage() {
+		return "pages/main";
+	}
 }
