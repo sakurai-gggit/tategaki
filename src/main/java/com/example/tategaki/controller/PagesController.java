@@ -25,4 +25,9 @@ public class PagesController {
 	public String editPage() {
 		return "pages/edit";
 	}
+
+	@GetMapping("/settings")
+	public String settingPage() {
+		return "pages/settings";
+	}
 }
