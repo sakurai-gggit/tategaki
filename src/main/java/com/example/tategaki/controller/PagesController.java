@@ -20,4 +20,9 @@ public class PagesController {
 	public String uploadPage() {
 		return "pages/upload";
 	}
+
+	@GetMapping("/edit")
+	public String editPage() {
+		return "pages/edit";
+	}
 }
