@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layouts/layout}">
+
 <body>
-<h1>top</h1>
-<a href="#">生成</a>
+	<main layout:fragment="contents">
+		<h1>top</h1>
+		<a href="#">生成</a>
+	</main>
+	<aside layout:fragment="navi"></aside>
 </body>
+
 </html>
