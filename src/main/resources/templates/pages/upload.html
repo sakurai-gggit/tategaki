@@ -4,7 +4,10 @@
 <body>
 	<main layout:fragment="contents">
 		<h2>登録</h2>
-
+		<form method="post" th:action="@{/add}">
+			<textarea name="content"></textarea>
+			<button type="submit">アップロード</button>
+		</form>
 	</main>
 	<aside layout:fragment="navi">
 		<nav th:replace="~{pages/main::menu}"></nav>
