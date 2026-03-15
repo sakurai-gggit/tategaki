@@ -23,4 +23,5 @@ footer {
 
 .tategaki-content {
 	writing-mode: vertical-rl;
+	white-space: pre-wrap;
 }
