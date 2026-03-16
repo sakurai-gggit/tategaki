@@ -20,7 +20,7 @@ public class Tanka {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
+	private Long tankaId;
 
 	@Column(name = "content")
 	private String content;

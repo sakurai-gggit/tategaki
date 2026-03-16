@@ -1,5 +1,7 @@
 package com.example.tategaki.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -34,7 +36,7 @@ public class PagesController {
 
 		if (randomTanka != null) {
 			model.addAttribute("content", randomTanka.getContent());
-			model.addAttribute("currentId", randomTanka.getId());
+			model.addAttribute("currentId", randomTanka.getTankaId());
 		} else {
 			model.addAttribute("content", "例文");
 		}
@@ -47,7 +49,9 @@ public class PagesController {
 	}
 
 	@GetMapping("/edit")
-	public String editPage() {
+	public String editPage(Model model) {
+		List<Tanka> list = tankaRepository.findAll();
+		model.addAttribute("list", list);
 		return "pages/edit";
 	}
 
@@ -57,10 +61,24 @@ public class PagesController {
 	}
 
 	@PostMapping("/add")
-	public String tankaUpload(@RequestParam String content) {
+	public String uploadTanka(@RequestParam String content) {
 		Tanka tanka = new Tanka();
 		tanka.setContent(content);
 		tankaRepository.saveAndFlush(tanka);
 		return "pages/upload";
+	}
+
+	@PostMapping("/update")
+	public String updateTanka(@RequestParam String content, @RequestParam Long tankaId) {
+		Tanka tanka = tankaRepository.findById(tankaId).get();
+		tanka.setContent(content);
+		tankaRepository.saveAndFlush(tanka);
+		return "redirect:/edit";
+	}
+
+	@PostMapping("/delete")
+	public String deleteTanka(@RequestParam Long tankaId) {
+		tankaRepository.deleteById(tankaId);
+		return "redirect:/edit";
 	}
 }
