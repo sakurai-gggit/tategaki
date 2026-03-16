@@ -61,7 +61,7 @@ public class PagesController {
 	}
 
 	@PostMapping("/add")
-	public String tankaUpload(@RequestParam String content) {
+	public String uploadTanka(@RequestParam String content) {
 		Tanka tanka = new Tanka();
 		tanka.setContent(content);
 		tankaRepository.saveAndFlush(tanka);
@@ -69,7 +69,7 @@ public class PagesController {
 	}
 
 	@PostMapping("/update")
-	public String tankaUpdate(@RequestParam String content, @RequestParam Long tankaId) {
+	public String updateTanka(@RequestParam String content, @RequestParam Long tankaId) {
 		Tanka tanka = tankaRepository.findById(tankaId).get();
 		tanka.setContent(content);
 		tankaRepository.saveAndFlush(tanka);
