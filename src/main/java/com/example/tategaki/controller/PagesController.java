@@ -22,10 +22,19 @@ public class PagesController {
 	}
 
 	@GetMapping("/main")
-	public String mainPage(Model model) {
-		Tanka randomTanka = tankaRepository.findRandomTanka();
+	public String mainPage(Model model, @RequestParam(value = "currentId", required = false) Long currentId) {
+
+		Tanka randomTanka;
+
+		if (currentId != null && tankaRepository.count() > 1) {
+			randomTanka = tankaRepository.findRandomTankaExcluding(currentId);
+		} else {
+			randomTanka = tankaRepository.findRandomTanka();
+		}
+
 		if (randomTanka != null) {
 			model.addAttribute("content", randomTanka.getContent());
+			model.addAttribute("currentId", randomTanka.getId());
 		} else {
 			model.addAttribute("content", "例文");
 		}
