@@ -75,4 +75,10 @@ public class PagesController {
 		tankaRepository.saveAndFlush(tanka);
 		return "redirect:/edit";
 	}
+
+	@PostMapping("/delete")
+	public String deleteTanka(@RequestParam Long tankaId) {
+		tankaRepository.deleteById(tankaId);
+		return "redirect:/edit";
+	}
 }

@@ -6,7 +6,10 @@
 		<h2>編集</h2>
 		<ul>
 			<li th:each="tankaItem:${list}">
-				<form method="post"></form>
+				<form method="post" th:action="@{/delete}">
+					<input type="hidden" name="tankaId" th:value="${tankaItem.tankaId}">
+					<button type="submit">削除</button>
+				</form>
 				<form method="post" th:action="@{/update}">
 					<input type="hidden" name="tankaId" th:value="${tankaItem.tankaId}">
 					<textarea th:text="${tankaItem.content}" name="content"></textarea>
