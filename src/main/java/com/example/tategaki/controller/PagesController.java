@@ -36,7 +36,7 @@ public class PagesController {
 
 		if (randomTanka != null) {
 			model.addAttribute("content", randomTanka.getContent());
-			model.addAttribute("currentId", randomTanka.getId());
+			model.addAttribute("currentId", randomTanka.getTankaId());
 		} else {
 			model.addAttribute("content", "例文");
 		}
@@ -66,5 +66,13 @@ public class PagesController {
 		tanka.setContent(content);
 		tankaRepository.saveAndFlush(tanka);
 		return "pages/upload";
+	}
+
+	@PostMapping("/update")
+	public String tankaUpdate(@RequestParam String content, @RequestParam Long tankaId) {
+		Tanka tanka = tankaRepository.findById(tankaId).get();
+		tanka.setContent(content);
+		tankaRepository.saveAndFlush(tanka);
+		return "redirect:/edit";
 	}
 }
