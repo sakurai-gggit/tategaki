@@ -1,5 +1,7 @@
 package com.example.tategaki.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -47,7 +49,9 @@ public class PagesController {
 	}
 
 	@GetMapping("/edit")
-	public String editPage() {
+	public String editPage(Model model) {
+		List<Tanka> list = tankaRepository.findAll();
+		model.addAttribute("list", list);
 		return "pages/edit";
 	}
 

@@ -4,10 +4,15 @@
 <body>
 	<main layout:fragment="contents">
 		<h2>編集</h2>
-
+		<ul>
+			<li th:each="tankaItem:${list}">
+				<textarea th:text="${tankaItem.content}"></textarea>
+			</li>
+		</ul>
 	</main>
 	<aside layout:fragment="navi">
 		<nav th:replace="~{pages/main::menu}"></nav>
 	</aside>
 </body>
+
 </html>
