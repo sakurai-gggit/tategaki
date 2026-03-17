@@ -6,8 +6,13 @@
 }
 
 @font-face {
-	font-family: 'hidarikiki';
-	src: url(../fonts/左利きの彼女_free.otf)format('opentype');
+	font-family: 'Honoka';
+	src: url(../fonts/Honoka_Shin_Mincho_L.otf) format('opentype');
+}
+
+@font-face {
+	font-family: 'WDXL';
+	src: url(../fonts/WDXLLubrifontJPN-Regular.ttf) format('truetype');
 }
 
 .main-wrapper {
@@ -37,9 +42,13 @@ footer {
 }
 
 #main-tategaki.font-HannariMincho {
-	font-family: 'HannariMincho', serif;
+	font-family: 'HannariMincho', 'Yu Mincho', 'Hiragino Mincho', serif;
 }
 
-#main-tategaki.font-hidarikiki {
-	font-family: 'hidarikiki', sans-serif;
+#main-tategaki.font-Honoka {
+	font-family: 'Honoka', 'Yu Mincho', 'Hiragino Mincho', serif;
+}
+
+#main-tategaki.font-WDXL {
+	font-family: 'WDXL', 'Yu Gothic', 'Hiragino Kaku Gothic ProN', 'Meiryo', sans-serif;
 }
