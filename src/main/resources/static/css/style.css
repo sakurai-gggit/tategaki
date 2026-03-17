@@ -2,7 +2,12 @@
 
 @font-face {
 	font-family: 'HannariMincho';
-	src: url(../fonts/HannariMincho-Regular.otf) format('otf');
+	src: url(../fonts/HannariMincho-Regular.otf) format('opentype');
+}
+
+@font-face {
+	font-family: 'hidarikiki';
+	src: url(../fonts/左利きの彼女_free.otf)format('opentype');
 }
 
 .main-wrapper {
@@ -31,6 +36,10 @@ footer {
 	white-space: pre-wrap;
 }
 
-#main-tategaki {
+#main-tategaki.font-HannariMincho {
 	font-family: 'HannariMincho', serif;
+}
+
+#main-tategaki.font-hidarikiki {
+	font-family: 'hidarikiki', sans-serif;
 }
