@@ -4,11 +4,40 @@
 <body>
 	<main layout:fragment="contents">
 		<h2>設定</h2>
+		<ul>
+			<li>
+				<label><input type="radio" name="font" value="font-HannariMincho">はんなり明朝<br>
+					<span>例文</span>
+				</label>
+			</li>
+			<li>
+				<label><input type="radio" name="font" value="font-Honoka">ほのか新明朝<br>
+					<span>例文</span>
+				</label>
+			</li>
+			<label><input type="radio" name="font" value="font-WDXL">WDXL Lubrifont<br>
+				<span>例文</span>
+			</label>
+			<li>
 
+				<label><input type="radio" name="font"></label>
+			</li>
+		</ul>
+		<button id="save-settings">設定を保存</button>
+		<script>
+			const saveBtn = document.getElementById('save-settings');
+			saveBtn.addEventListener('click', () => {
+				const selectedFont = document.querySelector('input[name="font"]:checked').value;
+				localStorage.setItem("userFont", selectedFont);
+				alert('保存完了');
+			});
+		</script>
 	</main>
 	<aside layout:fragment="navi">
 		<nav th:replace="~{pages/main::menu}"></nav>
 	</aside>
+
+
 </body>
 
 </html>

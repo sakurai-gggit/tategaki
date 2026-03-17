@@ -1,10 +1,32 @@
 <!DOCTYPE html>
 <html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layouts/layout}">
+<script>
+	(function () {
+		const savedFont = localStorage.getItem('userFont');
+		if (savedFont) {
+			const targetElement = document.getElementById('main-tategaki');
+			if (targetElement) {
+				targetElement.classList.add(savedFont);
+			}
+		}
+	})();
+</script>
 
 <body>
 	<main layout:fragment="contents">
 		<h1>main</h1>
-		<article th:text="${content}" class="tategaki-content"></article>
+		<article th:text="${content}" class="tategaki-content" id="main-tategaki"></article>
+		<script>
+				(function () {
+					const savedFont = localStorage.getItem('userFont');
+					if (savedFont) {
+						const targetElement = document.getElementById('main-tategaki');
+						if (targetElement) {
+							targetElement.classList.add(savedFont);
+						}
+					}
+				})();
+			</script>
 	</main>
 	<aside layout:fragment="navi">
 		<nav th:fragment="menu">
@@ -25,6 +47,7 @@
 		</nav>
 		<a th:href="@{/main(currentId=${currentId})}">再生成</a>
 	</aside>
+	
 </body>
 
 </html>
