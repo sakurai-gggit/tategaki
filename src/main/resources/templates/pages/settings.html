@@ -24,14 +24,7 @@
 			</li>
 		</ul>
 		<button id="save-settings">設定を保存</button>
-		<script>
-			const saveBtn = document.getElementById('save-settings');
-			saveBtn.addEventListener('click', () => {
-				const selectedFont = document.querySelector('input[name="font"]:checked').value;
-				localStorage.setItem("userFont", selectedFont);
-				alert('保存完了');
-			});
-		</script>
+
 	</main>
 	<aside layout:fragment="navi">
 		<nav th:replace="~{pages/main::menu}"></nav>
