@@ -7,7 +7,8 @@
 		<article th:text="${content}" class="tategaki-content" id="main-tategaki"></article>
 	</main>
 	<aside layout:fragment="navi">
-		<nav th:fragment="menu">
+		<button id="menu-button">menu</button>
+		<nav th:fragment="menu" id="menu">
 			<ul>
 				<li>
 					<a th:href="@{/upload}">登録</a>
