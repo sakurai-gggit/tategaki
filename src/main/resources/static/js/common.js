@@ -16,7 +16,10 @@ if (savedFont) {
 	}
 }
 
-document.getElementById('menu-button').addEventListener('click', () => {
-	var drawer = document.querySelector('#menu');
-	drawer.classList.toggle('open');
-})
+const drawerBtn = document.getElementById('menu-button')
+if (drawerBtn) {
+	drawerBtn.addEventListener('click', () => {
+		var drawer = document.querySelector('#menu');
+		drawer.classList.toggle('open');
+	});
+}
