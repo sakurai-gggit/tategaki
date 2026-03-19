@@ -6,11 +6,6 @@
 }
 
 @font-face {
-	font-family: 'Honoka';
-	src: url(../fonts/Honoka_Shin_Mincho_L.otf) format('opentype');
-}
-
-@font-face {
 	font-family: 'WDXL';
 	src: url(../fonts/WDXLLubrifontJPN-Regular.ttf) format('truetype');
 }
@@ -46,10 +41,6 @@ footer {
 
 #main-tategaki.font-HannariMincho {
 	font-family: 'HannariMincho', 'Yu Mincho', 'Hiragino Mincho', serif;
-}
-
-#main-tategaki.font-Honoka {
-	font-family: 'Honoka', 'Yu Mincho', 'Hiragino Mincho', serif;
 }
 
 #main-tategaki.font-WDXL {
