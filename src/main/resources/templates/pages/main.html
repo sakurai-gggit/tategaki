@@ -7,9 +7,21 @@
 		<article th:text="${content}" class="tategaki-content" id="main-tategaki"></article>
 	</main>
 	<aside layout:fragment="navi">
-		<button id="menu-button">menu</button>
-		<nav th:fragment="menu" id="menu">
-			<ul>
+		<nav th:fragment="menu">
+			<button id="menu-button">
+				<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path
+						d="M2 6C2 5.44772 2.44772 5 3 5H21C21.5523 5 22 5.44772 22 6C22 6.55228 21.5523 7 21 7H3C2.44772 7 2 6.55228 2 6Z"
+						fill="currentColor" />
+					<path
+						d="M2 12.0322C2 11.4799 2.44772 11.0322 3 11.0322H21C21.5523 11.0322 22 11.4799 22 12.0322C22 12.5845 21.5523 13.0322 21 13.0322H3C2.44772 13.0322 2 12.5845 2 12.0322Z"
+						fill="currentColor" />
+					<path
+						d="M3 17.0645C2.44772 17.0645 2 17.5122 2 18.0645C2 18.6167 2.44772 19.0645 3 19.0645H21C21.5523 19.0645 22 18.6167 22 18.0645C22 17.5122 21.5523 17.0645 21 17.0645H3Z"
+						fill="currentColor" />
+				</svg>
+			</button>
+			<ul id="menu">
 				<li>
 					<a th:href="@{/upload}">登録</a>
 				</li>
@@ -24,7 +36,13 @@
 				</li>
 			</ul>
 		</nav>
-		<a th:href="@{/main(currentId=${currentId})}">再生成</a>
+		<a th:href="@{/main(currentId=${currentId})}">
+			<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<path
+					d="M13.1459 11.0499L12.9716 9.05752L15.3462 8.84977C14.4471 7.98322 13.2242 7.4503 11.8769 7.4503C9.11547 7.4503 6.87689 9.68888 6.87689 12.4503C6.87689 15.2117 9.11547 17.4503 11.8769 17.4503C13.6977 17.4503 15.2911 16.4771 16.1654 15.0224L18.1682 15.5231C17.0301 17.8487 14.6405 19.4503 11.8769 19.4503C8.0109 19.4503 4.87689 16.3163 4.87689 12.4503C4.87689 8.58431 8.0109 5.4503 11.8769 5.4503C13.8233 5.4503 15.5842 6.24474 16.853 7.52706L16.6078 4.72412L18.6002 4.5498L19.1231 10.527L13.1459 11.0499Z"
+					fill="currentColor" />
+			</svg>
+		</a>
 	</aside>
 
 </body>
