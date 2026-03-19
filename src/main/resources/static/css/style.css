@@ -21,6 +21,7 @@
 	width: 95%;
 	max-width: 1000px;
 	gap: 100px;
+	overflow-x: hidden;
 }
 
 ul {
@@ -51,4 +52,24 @@ footer {
 
 #main-tategaki.font-WDXL {
 	font-family: 'WDXL', 'Yu Gothic', 'Hiragino Kaku Gothic ProN', 'Meiryo', sans-serif;
+}
+
+#menu {
+	position: absolute;
+	top: 0;
+	right: -160px;
+	background-color: gainsboro;
+	color: white;
+	height: 100%;
+	width: 160px;
+}
+
+#menu.open {
+	right: 0;
+	transition: 0.5s;
+}
+
+aside {
+	display: flex;
+	flex-direction: column;
 }

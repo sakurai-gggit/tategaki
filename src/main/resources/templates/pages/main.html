@@ -5,20 +5,10 @@
 	<main layout:fragment="contents">
 		<h1>main</h1>
 		<article th:text="${content}" class="tategaki-content" id="main-tategaki"></article>
-		<script>
-			(function () {
-				const savedFont = localStorage.getItem('userFont');
-				if (savedFont) {
-					const targetElement = document.getElementById('main-tategaki');
-					if (targetElement) {
-						targetElement.classList.add(savedFont);
-					}
-				}
-			})();
-		</script>
 	</main>
 	<aside layout:fragment="navi">
-		<nav th:fragment="menu">
+		<button id="menu-button">menu</button>
+		<nav th:fragment="menu" id="menu">
 			<ul>
 				<li>
 					<a th:href="@{/upload}">登録</a>
