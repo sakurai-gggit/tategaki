@@ -13,6 +13,7 @@
 				<form method="post" th:action="@{/update}">
 					<input type="hidden" name="tankaId" th:value="${tankaItem.tankaId}">
 					<textarea th:text="${tankaItem.content}" name="content"></textarea>
+					<a th:if="${fields.hasErrors(content)}" th:errors="*{content}"></a>
 					<button type="submit">送信</button>
 				</form>
 
