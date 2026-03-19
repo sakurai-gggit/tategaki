@@ -10,13 +10,21 @@
 	src: url(../fonts/WDXLLubrifontJPN-Regular.ttf) format('truetype');
 }
 
+body {
+	overflow-x: hidden;
+}
+
+main {
+	width: 95%;
+}
+
 .main-wrapper {
 	display: flex;
-	margin: 0 auto;
+	margin: 30px auto;
 	width: 95%;
 	max-width: 1000px;
 	gap: 100px;
-	overflow-x: hidden;
+	justify-content: space-between;
 }
 
 ul {
@@ -65,4 +73,10 @@ footer {
 aside {
 	display: flex;
 	flex-direction: column;
+}
+
+#main-tategaki {
+	margin-left: auto;
+	margin-right: auto;
+	font-size: x-large;
 }
