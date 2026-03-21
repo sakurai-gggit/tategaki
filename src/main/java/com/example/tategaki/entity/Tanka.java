@@ -24,7 +24,7 @@ public class Tanka {
 	private Long tankaId;
 
 	@Column(name = "content", length = 1000)
-	@Size(max = 1000, message = "1000字以内で入力してください")
+	@Size(max = 1000)
 	private String content;
 
 }
