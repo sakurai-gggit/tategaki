@@ -14,6 +14,16 @@ body {
 	overflow-x: hidden;
 }
 
+header {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+	gap: 30px;
+	position: absolute;
+	top: 20px;
+	right: 20px;
+}
+
 main {
 	width: 95%;
 }
@@ -56,13 +66,13 @@ footer {
 }
 
 #menu {
-	position: absolute;
-	top: 0;
-	right: -160px;
+	position: fixed;
 	background-color: gainsboro;
 	color: white;
 	height: 100%;
-	width: 160px;
+	width: 200px;
+	margin-top: 60px;
+	right: -200px;
 }
 
 #menu.open {
