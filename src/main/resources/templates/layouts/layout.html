@@ -37,7 +37,7 @@
 			<li>
 				<a th:href="@{/settings}">設定</a>
 			</li>
-			<li>
+			<li th:if="${mainPage!=null}">
 				<a th:href="@{/main}">メインページへ</a>
 			</li>
 		</ul>
