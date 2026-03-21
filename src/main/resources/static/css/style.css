@@ -58,6 +58,22 @@ footer {
 	position: fixed;
 	top: 20px;
 	right: 20px;
+	border: none;
+	background: none;
+	display: flex;
+	flex-direction: column;
+	transform: rotate(90deg);
+	gap: 5px;
+}
+
+#menu-button span {
+	width: 24px;
+	background-color: black;
+	height: 2px;
+}
+
+#menu-button span:nth-child(2) {
+	width: 20px;
 }
 
 #menu {
