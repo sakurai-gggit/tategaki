@@ -44,7 +44,6 @@ footer {
 
 .tategaki-content {
 	writing-mode: vertical-rl;
-	white-space: pre-wrap;
 }
 
 #main-tategaki.font-HannariMincho {
@@ -85,6 +84,7 @@ aside {
 	margin-left: auto;
 	margin-right: auto;
 	font-size: x-large;
+	white-space: pre-wrap;
 }
 
 .reload {
@@ -93,4 +93,8 @@ aside {
 	left: 50%;
 	transform: translateX(-50%);
 	z-index: 1000;
+}
+
+a {
+	text-decoration: none;
 }
