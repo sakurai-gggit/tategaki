@@ -14,16 +14,6 @@ body {
 	overflow-x: hidden;
 }
 
-header {
-	display: flex;
-	flex-direction: column;
-	align-items: flex-end;
-	gap: 30px;
-	position: absolute;
-	top: 20px;
-	right: 20px;
-}
-
 main {
 	width: 95%;
 }
@@ -65,6 +55,12 @@ footer {
 	font-family: 'WDXL', 'Yu Gothic', 'Hiragino Kaku Gothic ProN', 'Meiryo', sans-serif;
 }
 
+#menu-button {
+	position: fixed;
+	top: 20px;
+	right: 20px;
+}
+
 #menu {
 	position: fixed;
 	background-color: gainsboro;
@@ -89,4 +85,12 @@ aside {
 	margin-left: auto;
 	margin-right: auto;
 	font-size: x-large;
+}
+
+.reload {
+	position: fixed;
+	bottom: 40px;
+	left: 50%;
+	transform: translateX(-50%);
+	z-index: 1000;
 }
