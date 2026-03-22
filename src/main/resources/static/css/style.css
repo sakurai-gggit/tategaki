@@ -65,9 +65,10 @@ footer {
 	transform: rotate(90deg);
 	gap: 0.4rem;
 	padding: 1rem;
+	transition: 0.5s;
 }
 
-#menu-button:hover {
+#menu-button:not(.open):hover {
 	transition: 0.3s;
 	gap: 0.75rem;
 	transform: scaleY(1.5) rotate(90deg);
@@ -98,6 +99,19 @@ footer {
 	right: 0;
 	transition: 0.5s;
 }
+
+#menu-button.open span:nth-child(1) {
+	transform: translateY(10px) rotate(45deg);
+}
+
+#menu-button.open span:nth-child(2) {
+	background-color: transparent;
+}
+
+#menu-button.open span:nth-child(3) {
+	transform: translateY(-10px) rotate(-45deg);
+}
+
 
 aside {
 	display: flex;
