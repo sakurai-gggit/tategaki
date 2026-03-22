@@ -127,6 +127,12 @@ aside {
 	border: 2px solid #333;
 	border-radius: 50%;
 	border-bottom: transparent;
+	transition: 1.25s;
+}
+
+.reload:hover span {
+	border-width: 4px;
+	transform: rotate(540deg);
 }
 
 a {
