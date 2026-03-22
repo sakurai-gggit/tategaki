@@ -101,11 +101,11 @@ footer {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-evenly;
+	transition: 0.5s;
 }
 
 #menu.open {
 	right: 0;
-	transition: 0.5s;
 }
 
 #menu-button.open span:nth-child(1) {
