@@ -89,10 +89,18 @@ footer {
 	position: fixed;
 	background-color: gainsboro;
 	color: white;
-	height: 100%;
+	height: 50vh;
 	width: 200px;
 	margin-top: 60px;
 	right: -200px;
+	font-size: 1.5rem;
+	align-items: center;
+}
+
+#menu ul {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
 }
 
 #menu.open {
