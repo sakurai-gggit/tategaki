@@ -77,6 +77,7 @@ footer {
 	width: 2rem;
 	background-color: black;
 	height: 2px;
+	border-radius: 0.1rem;
 }
 
 #menu-button span:nth-child(2) {
@@ -116,6 +117,16 @@ aside {
 	left: 50%;
 	transform: translateX(-50%);
 	z-index: 1000;
+	padding: 1rem;
+}
+
+.reload span {
+	display: inline-block;
+	width: 1.5rem;
+	height: 1.5rem;
+	border: 2px solid #333;
+	border-radius: 50%;
+	border-bottom: transparent;
 }
 
 a {
