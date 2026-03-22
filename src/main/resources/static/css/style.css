@@ -33,6 +33,10 @@ ul {
 	padding: 0;
 }
 
+a{
+	color: #333;
+}
+
 footer {
 	position: fixed;
 	bottom: 0;
@@ -87,7 +91,6 @@ footer {
 
 #menu {
 	position: fixed;
-	background-color: gainsboro;
 	color: white;
 	height: 50vh;
 	width: 200px;
@@ -95,9 +98,6 @@ footer {
 	right: -200px;
 	font-size: 1.5rem;
 	align-items: center;
-}
-
-#menu ul {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-evenly;
