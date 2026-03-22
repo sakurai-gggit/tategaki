@@ -6,6 +6,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.Size;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -22,7 +23,8 @@ public class Tanka {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long tankaId;
 
-	@Column(name = "content")
+	@Column(name = "content", length = 1000)
+	@Size(max = 1000)
 	private String content;
 
 }

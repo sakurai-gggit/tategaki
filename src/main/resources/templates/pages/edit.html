@@ -12,16 +12,13 @@
 				</form>
 				<form method="post" th:action="@{/update}">
 					<input type="hidden" name="tankaId" th:value="${tankaItem.tankaId}">
-					<textarea th:text="${tankaItem.content}" name="content"></textarea>
+					<textarea th:text="${tankaItem.content}" name="content" maxlength="1000"></textarea>
 					<button type="submit">送信</button>
 				</form>
 
 			</li>
 		</ul>
 	</main>
-	<aside layout:fragment="navi">
-		<nav th:replace="~{pages/main::menu}"></nav>
-	</aside>
 </body>
 
 </html>

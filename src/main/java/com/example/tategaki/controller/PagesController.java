@@ -40,6 +40,8 @@ public class PagesController {
 		} else {
 			model.addAttribute("content", "例文");
 		}
+		model.addAttribute("mainPage", true);
+
 		return "pages/main";
 	}
 
