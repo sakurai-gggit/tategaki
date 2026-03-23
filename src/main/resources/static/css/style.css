@@ -14,10 +14,10 @@ body {
 	font-family: "Yu Mincho", "YuMincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "MS PMincho", serif;
 	overflow-x: hidden;
 	letter-spacing: 0.2rem;
-	color: #333;
-	background-image: url("/img/1409443.png");
-	background-size: 200px;
+	background-image: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), url(/img/1409443.png);
+	background-size: 300px;
 	background-repeat: repeat;
+	color: #0b2222f0;
 }
 
 main {
@@ -32,7 +32,7 @@ ul {
 }
 
 a {
-	color: #333;
+	color: #0b2222f0;
 }
 
 footer {
@@ -78,7 +78,7 @@ footer {
 
 #menu-button span {
 	width: 2rem;
-	background-color: black;
+	background-color: #0b2222f0;
 	height: 2px;
 	border-radius: 0.1rem;
 }
@@ -144,7 +144,7 @@ aside {
 	display: inline-block;
 	width: 1.5rem;
 	height: 1.5rem;
-	border: 2px solid #333;
+	border: 2px solid #0b2222f0;
 	border-radius: 50%;
 	border-bottom: transparent;
 	transition: 1.25s;
