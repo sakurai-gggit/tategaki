@@ -18,16 +18,8 @@ body {
 }
 
 main {
-	width: 95%;
-}
-
-.main-wrapper {
-	display: flex;
-	margin: 30px auto;
-	width: 95%;
-	max-width: 1000px;
-	gap: 100px;
-	justify-content: space-between;
+	width: 100vw;
+	margin-top: 3rem;
 }
 
 ul {
