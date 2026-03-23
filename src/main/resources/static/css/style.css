@@ -11,7 +11,10 @@
 }
 
 body {
+	font-family: "Yu Mincho", "YuMincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "MS PMincho", serif;
 	overflow-x: hidden;
+	letter-spacing: 0.2rem;
+	color: #333;
 }
 
 main {
@@ -31,6 +34,10 @@ ul {
 	list-style: none;
 	margin: 0;
 	padding: 0;
+}
+
+a {
+	color: #333;
 }
 
 footer {
@@ -87,17 +94,21 @@ footer {
 
 #menu {
 	position: fixed;
-	background-color: gainsboro;
 	color: white;
-	height: 100%;
+	height: 50vh;
 	width: 200px;
 	margin-top: 60px;
 	right: -200px;
+	font-size: 1.5rem;
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	transition: 0.5s;
 }
 
 #menu.open {
 	right: 0;
-	transition: 0.5s;
 }
 
 #menu-button.open span:nth-child(1) {
