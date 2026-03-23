@@ -15,6 +15,9 @@ body {
 	overflow-x: hidden;
 	letter-spacing: 0.2rem;
 	color: #333;
+	background-image: url("/img/1409443.png");
+	background-size: 200px;
+	background-repeat: repeat;
 }
 
 main {
