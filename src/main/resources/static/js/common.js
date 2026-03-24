@@ -1,10 +1,14 @@
 
 const saveBtn = document.getElementById('save-settings');
-if (saveBtn) {
+const toast = document.getElementById('toast');
+if (saveBtn && toast) {
 	saveBtn.addEventListener('click', () => {
 		const selectedFont = document.querySelector('input[name="font"]:checked').value;
 		localStorage.setItem("userFont", selectedFont);
-		alert('保存完了');
+		toast.classList.add('show');
+		setTimeout(() => {
+			toast.classList.remove('show');
+		}, 3000);
 	});
 }
 

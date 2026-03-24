@@ -158,3 +158,16 @@ aside {
 a {
 	text-decoration: none;
 }
+
+.toast {
+	opacity: 0;
+	visibility: hidden;
+	position: fixed;
+	top: 1rem;
+	right: 1rem;
+}
+
+.toast.show {
+	opacity: 1;
+	visibility: visible;
+}
