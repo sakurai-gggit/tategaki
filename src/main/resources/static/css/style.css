@@ -23,6 +23,8 @@ body {
 main {
 	width: 100vw;
 	margin-top: 3rem;
+	display: flex;
+	align-items: center;
 }
 
 ul {
@@ -48,11 +50,11 @@ footer {
 	writing-mode: vertical-rl;
 }
 
-#main-tategaki.font-HannariMincho {
+#main-tategaki.HannariMincho {
 	font-family: 'HannariMincho', 'Yu Mincho', 'Hiragino Mincho', serif;
 }
 
-#main-tategaki.font-WDXL {
+#main-tategaki.WDXL {
 	font-family: 'WDXL', 'Yu Gothic', 'Hiragino Kaku Gothic ProN', 'Meiryo', sans-serif;
 }
 
