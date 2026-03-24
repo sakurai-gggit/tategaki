@@ -3,6 +3,7 @@
 @font-face {
 	font-family: 'HannariMincho';
 	src: url(../fonts/HannariMincho-Regular.otf) format('opentype');
+	unicode-range: U+0000-300B, U+300E-FFFF;
 }
 
 @font-face {
