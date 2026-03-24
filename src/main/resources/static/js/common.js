@@ -10,10 +10,7 @@ if (saveBtn) {
 
 const savedFont = localStorage.getItem('userFont');
 if (savedFont) {
-	const targetElement = document.getElementById('main-tategaki');
-	if (targetElement) {
-		targetElement.classList.add(savedFont);
-	}
+	document.documentElement.style.setProperty("--selected-font", savedFont);
 }
 
 const drawerBtn = document.getElementById('menu-button')
@@ -25,17 +22,16 @@ if (drawerBtn && drawerMenu) {
 	});
 }
 
-
 const sampleText = "「そうだ。おや、あの河原は月夜だろうか。」そっちを見ますと、青白く光る銀河の岸に、銀いろのススキが、もうまるで一面、風にさらさらさらさら、ゆれてうごいて、波を立てているのでした。";
 const fonts = [
-	{ id: "HannariMincho", name: "はんなり明朝" },
-	{ id: "WDXL", name: "WDXL Lubrifont" }
+	{ id: "var(--default-font)", name: "標準" },
+	{ id: "'HannariMincho', 'Yu Mincho', 'Hiragino Mincho', serif", name: "はんなり明朝" },
+	{ id: "'WDXL', 'Yu Gothic', 'Hiragino Kaku Gothic ProN', 'Meiryo', sans-serif", name: "WDXL Lubrifont" }
 ];
-
 const container = document.getElementById('font-list');
-
-const fontListContent = fonts.map(font => {
-	return `
+if (container) {
+	const fontListContent = fonts.map(font => {
+		return `
 	<li>
 		<label style="font-family:${font.id}">
 			<input type="radio" name="font" value="${font.id}">
@@ -44,6 +40,7 @@ const fontListContent = fonts.map(font => {
 		</label>
 	</li>
 	`
-}).join("");
+	}).join("");
 
-container.innerHTML = fontListContent;
+	container.innerHTML = fontListContent;
+}
