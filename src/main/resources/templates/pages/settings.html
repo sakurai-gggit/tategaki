@@ -2,22 +2,10 @@
 <html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layouts/layout}">
 
 <body>
-	<main layout:fragment="contents">
-		<h2>設定</h2>
-		<ul>
-			<li>
-				<label><input type="radio" name="font" value="font-HannariMincho">はんなり明朝<br>
-					<span>例文</span>
-				</label>
-			</li>
-			<li>
-				<label><input type="radio" name="font" value="font-WDXL">WDXL Lubrifont<br>
-					<span>例文</span>
-				</label>
-			</li>
-		</ul>
+	<main layout:fragment="contents" class="tategaki-content">
+		<ul id="font-list"></ul>
 		<button id="save-settings">設定を保存</button>
-
+		<div id="toast" class="toast">保存したよ</div>
 	</main>
 </body>
 

@@ -10,8 +10,13 @@
 	src: url(../fonts/WDXLLubrifontJPN-Regular.ttf) format('truetype');
 }
 
+:root {
+	--default-font: "Yu Mincho", "YuMincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "MS PMincho", serif;
+	--selected-font: var(--default-font);
+}
+
 body {
-	font-family: "Yu Mincho", "YuMincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "MS PMincho", serif;
+	font-family: var(--default-font);
 	overflow-x: hidden;
 	letter-spacing: 0.2rem;
 	background-image: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), url(/img/1409443.png);
@@ -23,6 +28,8 @@ body {
 main {
 	width: 100vw;
 	margin-top: 3rem;
+	display: flex;
+	align-items: center;
 }
 
 ul {
@@ -46,14 +53,6 @@ footer {
 
 .tategaki-content {
 	writing-mode: vertical-rl;
-}
-
-#main-tategaki.font-HannariMincho {
-	font-family: 'HannariMincho', 'Yu Mincho', 'Hiragino Mincho', serif;
-}
-
-#main-tategaki.font-WDXL {
-	font-family: 'WDXL', 'Yu Gothic', 'Hiragino Kaku Gothic ProN', 'Meiryo', sans-serif;
 }
 
 #menu-button {
@@ -125,6 +124,7 @@ aside {
 }
 
 #main-tategaki {
+	font-family: var(--selected-font);
 	margin-left: auto;
 	margin-right: auto;
 	font-size: x-large;
@@ -157,4 +157,17 @@ aside {
 
 a {
 	text-decoration: none;
+}
+
+.toast {
+	opacity: 0;
+	visibility: hidden;
+	position: fixed;
+	top: 1rem;
+	right: 1rem;
+}
+
+.toast.show {
+	opacity: 1;
+	visibility: visible;
 }
