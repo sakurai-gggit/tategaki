@@ -30,7 +30,8 @@ const sampleText = "「そうだ。おや、あの河原は月夜だろうか。
 const fonts = [
 	{ id: "var(--default-font)", name: "標準" },
 	{ id: "'HannariMincho', 'Yu Mincho', 'Hiragino Mincho', serif", name: "はんなり明朝" },
-	{ id: "'WDXL', 'Yu Gothic', 'Hiragino Kaku Gothic ProN', 'Meiryo', sans-serif", name: "WDXL Lubrifont" }
+	{ id: "'KaiseiTokumin',serif", name: "解星 特ミン" },
+	{ id: "'KiwiMaru', 'Yu Gothic', 'Hiragino Kaku Gothic ProN', 'Meiryo', sans-serif", name: "キウイ丸" }
 ];
 const container = document.getElementById('font-list');
 if (container) {

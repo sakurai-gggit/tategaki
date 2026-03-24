@@ -7,8 +7,14 @@
 }
 
 @font-face {
-	font-family: 'WDXL';
-	src: url(../fonts/WDXLLubrifontJPN-Regular.ttf) format('truetype');
+	font-family: 'KaiseiTokumin';
+	src: url(../fonts/KaiseiTokumin-Regular.ttf) format('truetype');
+	unicode-range: U+0000-300B, U+300E-FFFF;
+}
+
+@font-face {
+	font-family: 'KiwiMaru';
+	src: url(../fonts/KiwiMaru-Light.ttf) format('truetype');
 }
 
 :root {
