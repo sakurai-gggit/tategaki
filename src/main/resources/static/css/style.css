@@ -225,10 +225,16 @@ input[type="radio"] {
 	block-size: 0.8rem;
 }
 
-#save-settings {
+button#save-settings {
 	align-self: flex-end;
 	padding: 1rem 0.2rem;
 	background-color: transparent;
 	border: 2px solid #0b2222f0;
 	border-radius: 5px;
+}
+
+button#save-settings:hover {
+	background-color: #066c65;
+	color: white;
+	border: solid 2px #066c65;
 }
