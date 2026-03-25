@@ -37,7 +37,7 @@ main {
 	margin: 3rem auto 3rem;
 	display: flex;
 	align-items: center;
-	justify-content: space-evenly;
+	justify-content: center;
 	flex-direction: column;
 }
 
@@ -202,7 +202,7 @@ a {
 }
 
 .font-list {
-	margin-right: 2rem;
+	margin: 0 2rem;
 }
 
 .font-list li {
@@ -223,4 +223,12 @@ input[type="radio"] {
 	accent-color: #066c65;
 	inline-size: 0.8rem;
 	block-size: 0.8rem;
+}
+
+#save-settings {
+	align-self: flex-end;
+	padding: 1rem 0.2rem;
+	background-color: transparent;
+	border: 2px solid #0b2222f0;
+	border-radius: 5px;
 }
