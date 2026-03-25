@@ -198,3 +198,9 @@ a {
 	height: 0.4rem;
 	transform: translateY(-60%) rotate(-45deg);
 }
+
+input[type="radio"] {
+	accent-color: #066c65;
+	inline-size: 0.8rem;
+	block-size: 0.8rem;
+}
