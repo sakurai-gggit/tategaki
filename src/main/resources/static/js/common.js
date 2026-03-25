@@ -35,11 +35,12 @@ const fonts = [
 ];
 const container = document.getElementById('font-list');
 if (container) {
-	const fontListContent = fonts.map(font => {
+	const fontListContent = fonts.map((font, index) => {
+		const isChecked = index === 0 ? 'checked' : '';
 		return `
 	<li>
 		<label style="font-family:${font.id}">
-			<input type="radio" name="font" value="${font.id}">
+			<input type="radio" name="font" value="${font.id}" ${isChecked}>
 			<span>${font.name}</span>
 			<div>${sampleText}</div>
 		</label>
