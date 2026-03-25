@@ -207,7 +207,12 @@ a {
 
 .font-list li {
 	margin: 0 2rem;
+	padding-right: 0.2rem;
 	line-height: 1.7rem;
+	background-image: linear-gradient(to bottom, #0b2222f0 11px, transparent 11px);
+	background-size: 2px 22px;
+	background-repeat: repeat-y;
+	background-position: right top;
 }
 
 .font-list li div {
