@@ -3,11 +3,18 @@
 @font-face {
 	font-family: 'HannariMincho';
 	src: url(../fonts/HannariMincho-Regular.otf) format('opentype');
+	unicode-range: U+0000-300B, U+300E-FFFF;
 }
 
 @font-face {
-	font-family: 'WDXL';
-	src: url(../fonts/WDXLLubrifontJPN-Regular.ttf) format('truetype');
+	font-family: 'KaiseiTokumin';
+	src: url(../fonts/KaiseiTokumin-Regular.ttf) format('truetype');
+	unicode-range: U+0000-300B, U+300E-FFFF;
+}
+
+@font-face {
+	font-family: 'KiwiMaru';
+	src: url(../fonts/KiwiMaru-Light.ttf) format('truetype');
 }
 
 :root {
@@ -27,9 +34,11 @@ body {
 
 main {
 	width: 100vw;
-	margin-top: 3rem;
+	margin: 3rem auto 3rem;
 	display: flex;
 	align-items: center;
+	justify-content: center;
+	flex-direction: column;
 }
 
 ul {
@@ -163,11 +172,69 @@ a {
 	opacity: 0;
 	visibility: hidden;
 	position: fixed;
-	top: 1rem;
+	bottom: 1.5rem;
 	right: 1rem;
+	writing-mode: lr;
+	background-color: #3e3e3e;
+	color: #fff;
+	padding: 0.8rem 1.2rem 0.8rem 2.4rem;
+	border-radius: 4px;
+	font-size: 0.9rem;
+	transition: 0.3s;
 }
 
 .toast.show {
 	opacity: 1;
 	visibility: visible;
+}
+
+.toast::before {
+	display: block;
+	position: absolute;
+	top: 50%;
+	left: 1rem;
+	content: "";
+	border-bottom: 2px solid;
+	border-left: 2px solid;
+	width: 0.8rem;
+	height: 0.4rem;
+	transform: translateY(-60%) rotate(-45deg);
+}
+
+.font-list {
+	margin: 0 2rem;
+}
+
+.font-list li {
+	margin: 0 2rem;
+	padding-right: 0.2rem;
+	line-height: 1.7rem;
+	background-image: linear-gradient(to bottom, #0b2222f0 11px, transparent 11px);
+	background-size: 2px 22px;
+	background-repeat: repeat-y;
+	background-position: right top;
+}
+
+.font-list li div {
+	margin-right: 0.5rem;
+}
+
+input[type="radio"] {
+	accent-color: #066c65;
+	inline-size: 0.8rem;
+	block-size: 0.8rem;
+}
+
+button#save-settings {
+	align-self: flex-end;
+	padding: 1rem 0.2rem;
+	background-color: transparent;
+	border: 2px solid #0b2222f0;
+	border-radius: 5px;
+}
+
+button#save-settings:hover {
+	background-color: #066c65;
+	color: white;
+	border: solid 2px #066c65;
 }

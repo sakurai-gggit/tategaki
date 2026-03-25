@@ -26,19 +26,21 @@ if (drawerBtn && drawerMenu) {
 	});
 }
 
-const sampleText = "「そうだ。おや、あの河原は月夜だろうか。」そっちを見ますと、青白く光る銀河の岸に、銀いろのススキが、もうまるで一面、風にさらさらさらさら、ゆれてうごいて、波を立てているのでした。";
+const sampleText = "「そうだ。おや、あの河原は月夜だろうか。」<br>そっちを見ますと、青白く光る銀河の岸に、銀いろのススキが、もうまるで一面、風にさらさらさらさら、ゆれてうごいて、波を立てているのでした。";
 const fonts = [
 	{ id: "var(--default-font)", name: "標準" },
 	{ id: "'HannariMincho', 'Yu Mincho', 'Hiragino Mincho', serif", name: "はんなり明朝" },
-	{ id: "'WDXL', 'Yu Gothic', 'Hiragino Kaku Gothic ProN', 'Meiryo', sans-serif", name: "WDXL Lubrifont" }
+	{ id: "'KaiseiTokumin',serif", name: "解星 特ミン" },
+	{ id: "'KiwiMaru', 'Yu Gothic', 'Hiragino Kaku Gothic ProN', 'Meiryo', sans-serif", name: "キウイ丸" }
 ];
 const container = document.getElementById('font-list');
 if (container) {
-	const fontListContent = fonts.map(font => {
+	const fontListContent = fonts.map((font, index) => {
+		const isChecked = index === 0 ? 'checked' : '';
 		return `
 	<li>
 		<label style="font-family:${font.id}">
-			<input type="radio" name="font" value="${font.id}">
+			<input type="radio" name="font" value="${font.id}" ${isChecked}>
 			<span>${font.name}</span>
 			<div>${sampleText}</div>
 		</label>
