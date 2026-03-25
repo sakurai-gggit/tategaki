@@ -34,9 +34,11 @@ body {
 
 main {
 	width: 100vw;
-	margin-top: 3rem;
+	margin: 3rem auto 3rem;
 	display: flex;
 	align-items: center;
+	justify-content: space-evenly;
+	flex-direction: column;
 }
 
 ul {
@@ -197,6 +199,19 @@ a {
 	width: 0.8rem;
 	height: 0.4rem;
 	transform: translateY(-60%) rotate(-45deg);
+}
+
+.font-list {
+	margin-right: 2rem;
+}
+
+.font-list li {
+	margin: 0 2rem;
+	line-height: 1.7rem;
+}
+
+.font-list li div {
+	margin-right: 0.5rem;
 }
 
 input[type="radio"] {
