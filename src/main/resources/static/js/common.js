@@ -26,7 +26,7 @@ if (drawerBtn && drawerMenu) {
 	});
 }
 
-const sampleText = "「そうだ。おや、あの河原は月夜だろうか。」そっちを見ますと、青白く光る銀河の岸に、銀いろのススキが、もうまるで一面、風にさらさらさらさら、ゆれてうごいて、波を立てているのでした。";
+const sampleText = "「そうだ。おや、あの河原は月夜だろうか。」<br>そっちを見ますと、青白く光る銀河の岸に、銀いろのススキが、もうまるで一面、風にさらさらさらさら、ゆれてうごいて、波を立てているのでした。";
 const fonts = [
 	{ id: "var(--default-font)", name: "標準" },
 	{ id: "'HannariMincho', 'Yu Mincho', 'Hiragino Mincho', serif", name: "はんなり明朝" },
