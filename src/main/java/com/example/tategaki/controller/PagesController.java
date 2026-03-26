@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.example.tategaki.entity.Tanka;
 import com.example.tategaki.repository.TankaRepository;
@@ -63,11 +64,12 @@ public class PagesController {
 	}
 
 	@PostMapping("/add")
-	public String uploadTanka(@RequestParam String content) {
+	public String uploadTanka(@RequestParam String content, RedirectAttributes redirectAttributes) {
 		Tanka tanka = new Tanka();
 		tanka.setContent(content);
 		tankaRepository.saveAndFlush(tanka);
-		return "pages/upload";
+		redirectAttributes.addFlashAttribute("message", "保存しました");
+		return "redirect:/upload";
 	}
 
 	@PostMapping("/update")

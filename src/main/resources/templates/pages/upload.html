@@ -9,6 +9,7 @@
 			<textarea name="content"></textarea>
 			<button type="submit">登録</button>
 		</form>
+		<div id="toast" class="toast" th:data-message="${message}"></div>
 	</main>
 	<aside layout:fragment="navi">
 		<nav th:replace="~{pages/main::menu}"></nav>

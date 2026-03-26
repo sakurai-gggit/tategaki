@@ -1,14 +1,20 @@
-
-const saveBtn = document.getElementById('save-settings');
-const toast = document.getElementById('toast');
-if (saveBtn && toast) {
-	saveBtn.addEventListener('click', () => {
-		const selectedFont = document.querySelector('input[name="font"]:checked').value;
-		localStorage.setItem("userFont", selectedFont);
+function showToast(message) {
+	const toast = document.getElementById('toast');
+	if (toast && message) {
+		toast.textContent = message;
 		toast.classList.add('show');
 		setTimeout(() => {
 			toast.classList.remove('show');
 		}, 3000);
+	}
+}
+
+const saveBtn = document.getElementById('save-settings');
+if (saveBtn) {
+	saveBtn.addEventListener('click', () => {
+		const selectedFont = document.querySelector('input[name="font"]:checked').value;
+		localStorage.setItem("userFont", selectedFont);
+		showToast("保存しました");
 	});
 }
 
@@ -50,3 +56,13 @@ if (container) {
 
 	container.innerHTML = fontListContent;
 }
+
+window.addEventListener('DOMContentLoaded', () => {
+	const toast = document.getElementById('toast');
+	const message = toast?.dataset.message;
+	if (message) {
+		setTimeout(() => {
+			showToast(message);
+		}, 100);
+	}
+});
