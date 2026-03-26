@@ -4,7 +4,8 @@
 <body>
 	<main layout:fragment="contents">
 		<h2>登録</h2>
-		<form method="post" th:action="@{/add}">
+		<h3>表示したい文章を登録します</h3>
+		<form method="post" th:action="@{/add}" class="upload-form">
 			<textarea name="content"></textarea>
 			<button type="submit">アップロード</button>
 		</form>
