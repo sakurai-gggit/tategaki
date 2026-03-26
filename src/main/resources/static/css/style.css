@@ -248,6 +248,8 @@ button#save-settings:hover {
 	width: 60%;
 	min-height: 20vh;
 	margin: 3rem auto;
+	border: 1px solid rgb(116 116 116 / 50%);
+	border-radius: 3px;
 }
 
 .upload-form button {
