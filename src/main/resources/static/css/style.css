@@ -252,6 +252,10 @@ button#save-settings:hover {
 	border-radius: 3px;
 }
 
+.upload-form textarea:focus {
+	outline: 1px solid #066c65;
+}
+
 .upload-form button {
 	display: block;
 	margin: auto;
