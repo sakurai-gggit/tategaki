@@ -238,3 +238,35 @@ button#save-settings:hover {
 	color: white;
 	border: solid 2px #066c65;
 }
+
+.upload-form {
+	width: 80%;
+}
+
+.upload-form textarea {
+	display: block;
+	width: 60%;
+	min-height: 20vh;
+	margin: 3rem auto;
+	border: 1px solid rgb(116 116 116 / 50%);
+	border-radius: 3px;
+}
+
+.upload-form textarea:focus {
+	outline: 1px solid #066c65;
+}
+
+.upload-form button {
+	display: block;
+	margin: auto;
+	background-color: white;
+	border: 1px solid rgb(116 116 116 / 50%);
+	border-radius: 3px;
+	padding: 0.2rem 1rem;
+}
+
+.upload-form button:hover {
+	background-color: #066c65;
+	color: white;
+	border: solid 2px #066c65;
+}
