@@ -41,6 +41,11 @@ main {
 	flex-direction: column;
 }
 
+.title {
+	writing-mode: vertical-rl;
+	margin: 2rem;
+}
+
 ul {
 	list-style: none;
 	margin: 0;
