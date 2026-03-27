@@ -25,10 +25,12 @@ if (savedFont) {
 
 const drawerBtn = document.getElementById('menu-button')
 const drawerMenu = document.getElementById('menu');
-if (drawerBtn && drawerMenu) {
+const drawerHeader = document.querySelector('header');
+if (drawerBtn && drawerMenu && drawerHeader) {
 	drawerBtn.addEventListener('click', () => {
 		drawerMenu.classList.toggle('open');
 		drawerBtn.classList.toggle('open');
+		drawerHeader.classList.toggle('open');
 	});
 }
 
