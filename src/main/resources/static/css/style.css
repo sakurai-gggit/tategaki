@@ -265,10 +265,10 @@ textarea:focus {
 	padding: 0.2rem 1rem;
 }
 
-.upload-form button:hover {
+main button:hover {
 	background-color: #066c65;
 	color: white;
-	border: solid 2px #066c65;
+	outline: solid 2px #066c65;
 }
 
 .edit-list {
