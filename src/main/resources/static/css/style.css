@@ -41,6 +41,26 @@ main {
 	flex-direction: column;
 }
 
+.title {
+	writing-mode: vertical-rl;
+	margin: 2rem;
+}
+
+header {
+	position: fixed;
+	top: 0;
+	right: -11rem;
+	width: 11rem;
+	height: 100vh;
+	background-image: url(/img/white.png);
+	background-size: 22rem;
+	transition: 0.5s;
+}
+
+header.open {
+	right: 0;
+}
+
 ul {
 	list-style: none;
 	margin: 0;
@@ -57,7 +77,8 @@ footer {
 	left: 0;
 	right: 0;
 	text-align: center;
-	background-color: #9e9e9e5c;
+	background-image: url(/img/white.png);
+	background-size: 22rem;
 }
 
 .tategaki-content {
@@ -76,6 +97,7 @@ footer {
 	gap: 0.4rem;
 	padding: 1rem;
 	transition: 0.5s;
+	z-index: 2;
 }
 
 #menu-button:not(.open):hover {
