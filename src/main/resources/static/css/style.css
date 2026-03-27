@@ -252,7 +252,7 @@ button#save-settings:hover {
 	border-radius: 3px;
 }
 
-.upload-form textarea:focus {
+textarea:focus {
 	outline: 1px solid #066c65;
 }
 
@@ -265,8 +265,44 @@ button#save-settings:hover {
 	padding: 0.2rem 1rem;
 }
 
-.upload-form button:hover {
+main button:hover {
 	background-color: #066c65;
 	color: white;
-	border: solid 2px #066c65;
+	outline: solid 2px #066c65;
+}
+
+.edit-list {
+	width: 80%;
+}
+
+.edit-list li {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-top: 3rem;
+}
+
+.edit-list li .update-form {
+	display: flex;
+}
+
+.edit-list li .update-form button {
+	align-self: center;
+}
+
+.edit-list textarea {
+	width: 30rem;
+	min-height: 5rem;
+}
+
+.edit-list button {
+	background-color: white;
+	border: 1px solid rgb(116 116 116 / 50%);
+	border-radius: 3px;
+	padding: 0.2rem 1rem;
+	height: 2rem;
+}
+
+.edit-list button {
+	margin: 1rem;
 }
