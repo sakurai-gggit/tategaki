@@ -270,3 +270,28 @@ button#save-settings:hover {
 	color: white;
 	border: solid 2px #066c65;
 }
+
+.edit-list {
+	width: 80%;
+}
+
+.edit-list li {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-top: 3rem;
+}
+
+.edit-list li .update-form {
+	display: flex;
+	align-self: center;
+}
+
+.edit-list textarea {
+	width: 30rem;
+	min-height: 5rem;
+}
+
+.edit-list button {
+	margin: 1rem;
+}
