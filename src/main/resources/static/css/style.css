@@ -328,3 +328,18 @@ main button:hover {
 .edit-list button {
 	margin: 1rem;
 }
+
+.genkou {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.genkou .masu {
+	border: 1px solid #7e5d26;
+	margin: -0.5px;
+}
+
+.genkou .br {
+	display: block;
+	flex-basis: 100%;
+}

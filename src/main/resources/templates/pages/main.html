@@ -3,7 +3,13 @@
 
 <body>
 	<main layout:fragment="contents">
-		<article th:text="${content}" class="tategaki-content" id="main-tategaki"></article>
+		<article class="tategaki-content" id="main-tategaki">
+			<div class="genkou">
+				<span th:each="char : ${chars}" th:class="${char=='¶' ? 'br' : 'masu'}"
+					th:text="${char=='¶' ? '':char}">
+				</span>
+			</div>
+		</article>
 		<a th:href="@{/main(currentId=${currentId})}" class="reload">
 			<span></span>
 		</a>
