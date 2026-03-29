@@ -34,11 +34,16 @@ body {
 
 main {
 	width: 100vw;
-	margin: 3rem auto 3rem;
+	margin: 3rem auto;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;
+}
+
+main.main-page {
+	height: 100vh;
+	margin: 0;
 }
 
 .title {
@@ -108,8 +113,8 @@ footer {
 
 #menu-button span {
 	width: 2rem;
-	background-color: #0b2222f0;
-	height: 2px;
+	background-color: #055a54e0;
+	height: 3px;
 	border-radius: 0.1rem;
 }
 
@@ -156,7 +161,7 @@ aside {
 
 .reload {
 	position: fixed;
-	bottom: 40px;
+	bottom: 0.5rem;
 	left: 50%;
 	transform: translateX(-50%);
 	z-index: 1000;
@@ -167,7 +172,7 @@ aside {
 	display: inline-block;
 	width: 1.5rem;
 	height: 1.5rem;
-	border: 2px solid #0b2222f0;
+	border: 2px solid #7e5d26;
 	border-radius: 50%;
 	border-bottom: transparent;
 	transition: 1.25s;
@@ -234,7 +239,7 @@ a {
 }
 
 input[type="radio"] {
-	accent-color: #066c65;
+	accent-color: #055a54e0;
 	inline-size: 0.8rem;
 	block-size: 0.8rem;
 }
@@ -248,9 +253,9 @@ button#save-settings {
 }
 
 button#save-settings:hover {
-	background-color: #066c65;
+	background-color: #055a54e0;
 	color: white;
-	border: solid 2px #066c65;
+	border: solid 2px #055a54e0;
 }
 
 .upload-form {
@@ -324,8 +329,7 @@ main button:hover {
 #main-tategaki {
 	font-family: var(--selected-font);
 	max-width: 90vw;
-	margin-left: auto;
-	margin-right: auto;
+	margin: 0 auto 3rem;
 	font-size: x-large;
 	border: 5px solid #7e5d26;
 	box-sizing: border-box;
