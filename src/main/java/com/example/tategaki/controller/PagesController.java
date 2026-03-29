@@ -34,13 +34,16 @@ public class PagesController {
 		} else {
 			randomTanka = tankaRepository.findRandomTanka();
 		}
-
+		String content;
 		if (randomTanka != null) {
-			model.addAttribute("content", randomTanka.getContent());
+			content = randomTanka.getContent();
 			model.addAttribute("currentId", randomTanka.getTankaId());
 		} else {
-			model.addAttribute("content", "例文");
+			content = "例文";
 		}
+		List<String> chars = content.replaceAll("\\r\\n|\\n|\\r", "¶")
+				.chars().mapToObj(c -> String.valueOf((char) c)).toList();
+		model.addAttribute("chars", chars);
 		model.addAttribute("mainPage", true);
 
 		return "pages/main";
