@@ -323,25 +323,29 @@ main button:hover {
 
 #main-tategaki {
 	font-family: var(--selected-font);
-	max-width: 100vw;
+	max-width: 90vw;
 	margin-left: auto;
 	margin-right: auto;
 	font-size: x-large;
 	border: 5px solid #7e5d26;
+	box-sizing: border-box;
 }
 
 .genkou {
 	display: flex;
-	flex-wrap: wrap;
-	height: 21em;
 	padding: 0.2em 2em;
 	margin: 0.2em;
 	border: 2px solid #7e5d26;
 }
 
-.genkou .container{
+.genkou .container {
 	overflow-x: scroll;
+	display: flex;
+	flex-wrap: wrap;
+	height: 21em;
+	max-width: 100vh;
 }
+
 .genkou .masu {
 	border: 1px solid #7e5d26;
 	margin: -0.5px;

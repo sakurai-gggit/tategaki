@@ -5,11 +5,11 @@
 	<main layout:fragment="contents">
 		<article class="tategaki-content" id="main-tategaki">
 			<div class="genkou">
-				
+				<div class="container">
 					<span th:each="char : ${chars}" th:class="${char=='¶' ? 'br' : 'masu'}"
 						th:text="${char=='¶' ? '':char}">
 					</span>
-				
+				</div>
 			</div>
 		</article>
 		<a th:href="@{/main(currentId=${currentId})}" class="reload">
