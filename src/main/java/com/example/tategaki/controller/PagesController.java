@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.example.tategaki.entity.Tanka;
+import com.example.tategaki.repository.CategoryRepository;
 import com.example.tategaki.repository.TankaRepository;
 
 @Controller
@@ -18,6 +19,7 @@ public class PagesController {
 
 	@Autowired
 	private TankaRepository tankaRepository;
+	private CategoryRepository categoryRepository;
 
 	@GetMapping("/")
 	public String index() {
@@ -67,9 +69,13 @@ public class PagesController {
 	}
 
 	@PostMapping("/add")
-	public String uploadTanka(@RequestParam String content, RedirectAttributes redirectAttributes) {
+	public String uploadTanka(@RequestParam String content, @RequestParam Long categoryId,
+			RedirectAttributes redirectAttributes) {
 		Tanka tanka = new Tanka();
 		tanka.setContent(content);
+		categoryRepository.findById(categoryId).ifPresent(cate -> {
+			tanka.setCategory(cate);
+		});
 		tankaRepository.saveAndFlush(tanka);
 		redirectAttributes.addFlashAttribute("message", "保存しました");
 		return "redirect:/upload";
