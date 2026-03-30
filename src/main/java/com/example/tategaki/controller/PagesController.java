@@ -20,6 +20,8 @@ public class PagesController {
 
 	@Autowired
 	private TankaRepository tankaRepository;
+
+	@Autowired
 	private CategoryRepository categoryRepository;
 
 	@GetMapping("/")
