@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.example.tategaki.entity.Category;
 import com.example.tategaki.entity.Tanka;
 import com.example.tategaki.repository.CategoryRepository;
 import com.example.tategaki.repository.TankaRepository;
@@ -52,7 +53,9 @@ public class PagesController {
 	}
 
 	@GetMapping("/upload")
-	public String uploadPage() {
+	public String uploadPage(Model model) {
+		List<Category> categoryList = categoryRepository.findAll();
+		model.addAttribute("categoryList", categoryList);
 		return "pages/upload";
 	}
 
