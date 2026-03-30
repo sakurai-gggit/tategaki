@@ -1,36 +1,32 @@
 package com.example.tategaki.entity;
 
+import java.util.List;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
-import jakarta.validation.constraints.Size;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Table(name = "tanka")
+@Table(name = "category")
 @NoArgsConstructor
 @Getter
 @Setter
-public class Tanka {
-
+public class Category {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long tankaId;
+	private Long categoryId;
 
-	@Column(name = "content", length = 1000)
-	@Size(max = 1000)
-	private String content;
+	@Column
+	private String categoryName;
 
-	@ManyToOne
-	@JoinColumn(name = "category_id")
-	private Category category;
-
+	@OneToMany(mappedBy = "category")
+	private List<Tanka> tankaList;
 }
