@@ -12,13 +12,14 @@
 				</div>
 			</div>
 		</article>
-		<select name="categoryId">
-			<option th:each="cate:${categoryList}" th:value="${cate.categoryId}"
-			 th:text="${cate.categoryName}">
+		<select name="categoryId" onchange="location.href='/main?categoryId='+this.value;">
+			<option th:each="cate:${categoryList}" th:value="${cate.categoryId}" 
+			th:text="${cate.categoryName}" th:selected="${cate.categoryId==selectedCategoryId}">
 			</option>
 		</select>
-		<a th:href="@{/main(currentId=${currentId})}" class="reload">
+		<a th:href="@{/main(currentId=${currentId},categoryId=${selectedCategoryId})}" class="reload">
 			<span></span>
+			
 		</a>
 	</main>
 </body>

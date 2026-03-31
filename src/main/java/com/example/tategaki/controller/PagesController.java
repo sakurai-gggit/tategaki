@@ -58,7 +58,7 @@ public class PagesController {
 		List<Category> categoryList = categoryRepository.findAll();
 		model.addAttribute("categoryList", categoryList);
 		model.addAttribute("mainPage", true);
-		model.addAttribute("tanka", tanka);
+		model.addAttribute("selectedCategoryId", categoryId);
 
 		return "pages/main";
 	}
