@@ -370,3 +370,11 @@ main button:hover {
 .genkou span {
 	padding: 0.1rem;
 }
+
+.main-page select {
+	position: fixed;
+	top: 2rem;
+	left: 2rem;
+	width: 5rem;
+
+}

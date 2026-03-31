@@ -13,7 +13,8 @@
 			</div>
 		</article>
 		<select name="categoryId">
-			<option th:each="cate:${categoryList}" th:value="${cate.categoryId}" th:text="${cate.categoryName}">
+			<option th:each="cate:${categoryList}" th:value="${cate.categoryId}"
+			 th:text="${cate.categoryName}">
 			</option>
 		</select>
 		<a th:href="@{/main(currentId=${currentId})}" class="reload">

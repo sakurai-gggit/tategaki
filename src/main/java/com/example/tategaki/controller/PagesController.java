@@ -55,7 +55,10 @@ public class PagesController {
 		List<String> chars = content.replaceAll("\\r\\n|\\n|\\r", "¶")
 				.chars().mapToObj(c -> String.valueOf((char) c)).toList();
 		model.addAttribute("chars", chars);
+		List<Category> categoryList = categoryRepository.findAll();
+		model.addAttribute("categoryList", categoryList);
 		model.addAttribute("mainPage", true);
+		model.addAttribute("tanka", tanka);
 
 		return "pages/main";
 	}
