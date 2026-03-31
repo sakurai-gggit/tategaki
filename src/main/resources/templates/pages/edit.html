@@ -14,6 +14,12 @@
 				<form method="post" th:action="@{/update}" class="update-form">
 					<input type="hidden" name="tankaId" th:value="${tankaItem.tankaId}">
 					<textarea th:text="${tankaItem.content}" name="content" maxlength="1000"></textarea>
+					<select name="categoryId">
+						<option th:each="cate:${categoryList}" th:value="${cate.categoryId}"
+							th:text="${cate.categoryName}"
+							th:selected="${cate.categoryId==tankaItem.category.categoryId}">
+						</option>
+					</select>
 					<button type="submit">確定</button>
 				</form>
 

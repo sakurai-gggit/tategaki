@@ -65,8 +65,7 @@ public class PagesController {
 
 	@GetMapping("/upload")
 	public String uploadPage(Model model) {
-		List<Category> categoryList = categoryRepository.findAll();
-		model.addAttribute("categoryList", categoryList);
+		addCategoryList(model);
 		return "pages/upload";
 	}
 
@@ -74,6 +73,7 @@ public class PagesController {
 	public String editPage(Model model) {
 		List<Tanka> list = tankaRepository.findAll();
 		model.addAttribute("list", list);
+		addCategoryList(model);
 		return "pages/edit";
 	}
 
@@ -96,9 +96,10 @@ public class PagesController {
 	}
 
 	@PostMapping("/update")
-	public String updateTanka(@RequestParam String content, @RequestParam Long tankaId) {
+	public String updateTanka(@RequestParam String content, @RequestParam Long tankaId, @RequestParam Long categoryId) {
 		Tanka tanka = tankaRepository.findById(tankaId).get();
 		tanka.setContent(content);
+		tanka.setCategory(categoryRepository.findById(categoryId).get());
 		tankaRepository.saveAndFlush(tanka);
 		return "redirect:/edit";
 	}
@@ -107,5 +108,10 @@ public class PagesController {
 	public String deleteTanka(@RequestParam Long tankaId) {
 		tankaRepository.deleteById(tankaId);
 		return "redirect:/edit";
+	}
+
+	private void addCategoryList(Model model) {
+		List<Category> categoryList = categoryRepository.findAll();
+		model.addAttribute("categoryList", categoryList);
 	}
 }
