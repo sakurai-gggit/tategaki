@@ -30,21 +30,27 @@ public class PagesController {
 	}
 
 	@GetMapping("/main")
-	public String mainPage(Model model, @RequestParam(value = "currentId", required = false) Long currentId) {
+	public String mainPage(Model model, @RequestParam(value = "categoryId", required = false) Long categoryId,
+			@RequestParam(value = "currentId", required = false) Long currentId) {
 
-		Tanka randomTanka;
-
-		if (currentId != null && tankaRepository.count() > 1) {
-			randomTanka = tankaRepository.findRandomTankaExcluding(currentId);
+		if (categoryId == null) {
+			categoryId = 1L;
+		}
+		Tanka tanka;
+		if (currentId != null) {
+			tanka = tankaRepository.findRandomTankaByCategoryExcluding(categoryId, currentId);
+			if (tanka == null) {
+				tanka = tankaRepository.findRandomTankaByCategory(categoryId);
+			}
 		} else {
-			randomTanka = tankaRepository.findRandomTanka();
+			tanka = tankaRepository.findRandomTankaByCategory(categoryId);
 		}
 		String content;
-		if (randomTanka != null) {
-			content = randomTanka.getContent();
-			model.addAttribute("currentId", randomTanka.getTankaId());
+		if (tanka != null) {
+			content = tanka.getContent();
+			model.addAttribute("currentId", tanka.getTankaId());
 		} else {
-			content = "例文";
+			content = "ここに登録した文章を表示します。¶右のメニューボタンから登録してみましょう。";
 		}
 		List<String> chars = content.replaceAll("\\r\\n|\\n|\\r", "¶")
 				.chars().mapToObj(c -> String.valueOf((char) c)).toList();
