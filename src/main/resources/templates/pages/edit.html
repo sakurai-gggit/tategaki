@@ -5,6 +5,12 @@
 	<main layout:fragment="contents">
 		<h2>編集</h2>
 		<h3>登録した文章の編集、削除ができます</h3>
+		<select name="categoryId" onchange="location.href='/edit?categoryId='+this.value;">
+			<option value="" th:selected="${selectedCategoryId==null}">全件表示</option>
+			<option th:each="cate:${categoryList}" th:value="${cate.categoryId}" th:text="${cate.categoryName}"
+				th:selected="${cate.categoryId==selectedCategoryId}">
+			</option>
+		</select>
 		<ul class="edit-list">
 			<li th:each="tankaItem:${list}">
 				<form method="post" th:action="@{/delete}">

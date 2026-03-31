@@ -55,8 +55,7 @@ public class PagesController {
 		List<String> chars = content.replaceAll("\\r\\n|\\n|\\r", "¶")
 				.chars().mapToObj(c -> String.valueOf((char) c)).toList();
 		model.addAttribute("chars", chars);
-		List<Category> categoryList = categoryRepository.findAll();
-		model.addAttribute("categoryList", categoryList);
+		addCategoryList(model);
 		model.addAttribute("mainPage", true);
 		model.addAttribute("selectedCategoryId", categoryId);
 
@@ -70,9 +69,15 @@ public class PagesController {
 	}
 
 	@GetMapping("/edit")
-	public String editPage(Model model) {
-		List<Tanka> list = tankaRepository.findAll();
+	public String editPage(@RequestParam(value = "categoryId", required = false) Long categoryId, Model model) {
+		List<Tanka> list;
+		if (categoryId == null) {
+			list = tankaRepository.findAll();
+		} else {
+			list = tankaRepository.findByCategory_categoryId(categoryId);
+		}
 		model.addAttribute("list", list);
+		model.addAttribute("selectedCategoryId", categoryId);
 		addCategoryList(model);
 		return "pages/edit";
 	}
