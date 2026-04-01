@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layouts/layout}">
+
+<body>
+	<main layout:fragment="contents">
+		<h2>カテゴリの編集</h2>
+		<h3>カテゴリの登録、編集、削除ができます</h3>
+		<ul>
+			<li th:each="cate:${categoryList}">
+				<form method="post" th:action="@{/category/delete}">
+					<input type="hidden" name="categoryId" th:value="${cate.categoryId}">
+					<button type="submit">削除</button>
+				</form>
+				<form method="post" th:action="@{/category/update}">
+					<input type="hidden" name="categoryId" th:value="${cate.categoryId}">
+					<textarea name="categoryName" th:text="${cate.categoryName}"></textarea>
+					<button type="submit">確定</button>
+				</form>
+			</li>
+		</ul>
+		<form method="post" th:action="@{/category/add}">
+			<textarea name="categoryName"></textarea>
+			<button type="submit">追加</button>
+		</form>
+	</main>
+</body>
+
+</html>
