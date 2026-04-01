@@ -1,5 +1,7 @@
 package com.example.tategaki.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -9,7 +11,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.example.tategaki.entity.Category;
+import com.example.tategaki.entity.Tanka;
 import com.example.tategaki.repository.CategoryRepository;
+import com.example.tategaki.repository.TankaRepository;
 
 @Controller
 @RequestMapping("/category")
@@ -17,6 +21,9 @@ public class CategoryController {
 
 	@Autowired
 	private CategoryRepository categoryRepository;
+
+	@Autowired
+	private TankaRepository tankaRepository;
 
 	@GetMapping("")
 	public String getPage(Model model) {
@@ -26,6 +33,11 @@ public class CategoryController {
 
 	@PostMapping("/delete")
 	public String delete(@RequestParam Long categoryId) {
+		List<Tanka> thisCategoryTanka = tankaRepository.findByCategory_categoryId(categoryId);
+		thisCategoryTanka.forEach(tanka -> {
+			tanka.setCategory(null);
+			tankaRepository.saveAndFlush(tanka);
+		});
 		categoryRepository.deleteById(categoryId);
 		return "redirect:/category";
 	}
