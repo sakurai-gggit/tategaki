@@ -32,18 +32,25 @@ public class PagesController {
 	@GetMapping("/main")
 	public String mainPage(Model model, @RequestParam(value = "categoryId", required = false) Long categoryId,
 			@RequestParam(value = "currentId", required = false) Long currentId) {
-
-		if (categoryId == null) {
-			categoryId = 1L;
-		}
 		Tanka tanka;
-		if (currentId != null) {
-			tanka = tankaRepository.findRandomTankaByCategoryExcluding(categoryId, currentId);
-			if (tanka == null) {
-				tanka = tankaRepository.findRandomTankaByCategory(categoryId);
+		if (categoryId == null) {
+			if (currentId != null) {
+				tanka = tankaRepository.findRandomTankaExcluding(currentId);
+				if (tanka == null) {
+					tanka = tankaRepository.findRandomTanka();
+				}
+			} else {
+				tanka = tankaRepository.findRandomTanka();
 			}
 		} else {
-			tanka = tankaRepository.findRandomTankaByCategory(categoryId);
+			if (currentId != null) {
+				tanka = tankaRepository.findRandomTankaByCategoryExcluding(categoryId, currentId);
+				if (tanka == null) {
+					tanka = tankaRepository.findRandomTankaByCategory(categoryId);
+				}
+			} else {
+				tanka = tankaRepository.findRandomTankaByCategory(categoryId);
+			}
 		}
 		String content;
 		if (tanka != null) {

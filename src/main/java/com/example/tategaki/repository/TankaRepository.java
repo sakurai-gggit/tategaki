@@ -18,5 +18,11 @@ public interface TankaRepository extends JpaRepository<Tanka, Long> {
 	@Query(value = "SELECT * FROM tanka WHERE category_id=:categoryId AND tanka_id != :currentId ORDER BY RANDOM() LIMIT 1", nativeQuery = true)
 	Tanka findRandomTankaByCategoryExcluding(@Param("categoryId") Long categoryId, @Param("currentId") Long currentId);
 
+	@Query(value = "SELECT * FROM tanka ORDER BY RANDOM() LIMIT 1", nativeQuery = true)
+	Tanka findRandomTanka();
+
+	@Query(value = "SELECT * FROM tanka WHERE tanka_id != :currentId ORDER BY RANDOM() LIMIT 1", nativeQuery = true)
+	Tanka findRandomTankaExcluding(@Param("currentId") Long currentId);
+
 	List<Tanka> findByCategory_categoryId(Long categoryId);
 }

@@ -13,6 +13,7 @@
 			</div>
 		</article>
 		<select name="categoryId" onchange="location.href='/main?categoryId='+this.value;">
+			<option value="" th:selected="${selectedCategoryId==null}">全件表示</option>
 			<option th:each="cate:${categoryList}" th:value="${cate.categoryId}" 
 			th:text="${cate.categoryName}" th:selected="${cate.categoryId==selectedCategoryId}">
 			</option>
