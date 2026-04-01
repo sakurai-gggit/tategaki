@@ -95,7 +95,7 @@ public class PagesController {
 	}
 
 	@PostMapping("/add")
-	public String uploadTanka(@RequestParam String content, @RequestParam Long categoryId,
+	public String add(@RequestParam String content, @RequestParam Long categoryId,
 			RedirectAttributes redirectAttributes) {
 		Tanka tanka = new Tanka();
 		tanka.setContent(content);
@@ -108,7 +108,7 @@ public class PagesController {
 	}
 
 	@PostMapping("/update")
-	public String updateTanka(@RequestParam String content, @RequestParam Long tankaId, @RequestParam Long categoryId) {
+	public String update(@RequestParam String content, @RequestParam Long tankaId, @RequestParam Long categoryId) {
 		Tanka tanka = tankaRepository.findById(tankaId).get();
 		tanka.setContent(content);
 		tanka.setCategory(categoryRepository.findById(categoryId).get());
@@ -117,7 +117,7 @@ public class PagesController {
 	}
 
 	@PostMapping("/delete")
-	public String deleteTanka(@RequestParam Long tankaId) {
+	public String delete(@RequestParam Long tankaId) {
 		tankaRepository.deleteById(tankaId);
 		return "redirect:/edit";
 	}
