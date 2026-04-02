@@ -262,11 +262,16 @@ button#save-settings:hover {
 	width: 80%;
 }
 
-.upload-form textarea {
-	display: block;
+.upload-form div {
+	display: flex;
+	flex-direction: column;
+	margin: auto;
 	width: 60%;
+	gap: 2rem;
+}
+
+.upload-form textarea {
 	min-height: 20vh;
-	margin: 3rem auto;
 	border: 1px solid rgb(116 116 116 / 50%);
 	border-radius: 3px;
 }
@@ -275,9 +280,13 @@ textarea:focus {
 	outline: 1px solid #066c65;
 }
 
+.upload-form select {
+	align-self: end;
+}
+
 .upload-form button {
 	display: block;
-	margin: auto;
+	margin: 2rem auto;
 	background-color: white;
 	border: 1px solid rgb(116 116 116 / 50%);
 	border-radius: 3px;
