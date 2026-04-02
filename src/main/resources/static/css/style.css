@@ -326,6 +326,12 @@ main button:hover {
 	padding: 0.2rem 1rem;
 }
 
+.edit-page a:hover {
+	background-color: #055a54e0;
+	color: white;
+	outline: solid 2px #066c65;
+}
+
 .edit-page ul {
 	width: 100%;
 }
