@@ -253,6 +253,7 @@ input[type="radio"] {
 }
 
 button#save-settings {
+	width: fit-content;
 	align-self: flex-end;
 	padding: 1rem 0.2rem;
 	background-color: transparent;
@@ -293,6 +294,7 @@ button {
 	border: 1px solid rgb(116 116 116 / 50%);
 	border-radius: 3px;
 	padding: 0.2rem 1rem;
+	width: 5rem;
 }
 
 .upload-form select {
@@ -446,15 +448,21 @@ main button:hover {
 	flex-grow: 1;
 }
 
-.category-page ul li:last-child form {
-	display: flex;
-	flex-grow: 1;
-	gap: 2rem;
-	padding-left: calc(16px + 2rem + 2rem);
+.category-page ul li .delete-spacer {
+	width: 5rem;
+}
+
+.category-page ul li:last-child {
 	background-image: linear-gradient(to right, #066c65 4px, transparent 4px);
 	background-size: 11px 4px;
 	background-repeat: repeat-x;
 	background-position: left top;
-	padding-top: 3rem;
-	margin-top: 1rem;
+	margin: 4rem auto;
+}
+
+.category-page ul li:last-child form {
+	display: flex;
+	flex-grow: 1;
+	gap: 2rem;
+	margin-top: 4rem;
 }
