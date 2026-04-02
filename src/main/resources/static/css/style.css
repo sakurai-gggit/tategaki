@@ -76,6 +76,14 @@ a {
 	color: #0b2222f0;
 }
 
+select {
+	height: 2rem;
+	width: fit-content;
+	min-width: 5rem;
+	border: 1px solid rgb(116 116 116 / 50%);
+	border-radius: 3px;
+}
+
 footer {
 	position: fixed;
 	bottom: 0;
@@ -113,7 +121,7 @@ footer {
 
 #menu-button span {
 	width: 2rem;
-	background-color: #055a54e0;
+	background-color: #066c65;
 	height: 3px;
 	border-radius: 0.1rem;
 }
@@ -239,12 +247,13 @@ a {
 }
 
 input[type="radio"] {
-	accent-color: #055a54e0;
+	accent-color: #066c65;
 	inline-size: 0.8rem;
 	block-size: 0.8rem;
 }
 
 button#save-settings {
+	width: fit-content;
 	align-self: flex-end;
 	padding: 1rem 0.2rem;
 	background-color: transparent;
@@ -253,20 +262,25 @@ button#save-settings {
 }
 
 button#save-settings:hover {
-	background-color: #055a54e0;
+	background-color: #066c65;
 	color: white;
-	border: solid 2px #055a54e0;
+	border: solid 2px #066c65;
 }
 
 .upload-form {
 	width: 80%;
 }
 
-.upload-form textarea {
-	display: block;
+.upload-form div {
+	display: flex;
+	flex-direction: column;
+	margin: auto;
 	width: 60%;
+	gap: 2rem;
+}
+
+.upload-form textarea {
 	min-height: 20vh;
-	margin: 3rem auto;
 	border: 1px solid rgb(116 116 116 / 50%);
 	border-radius: 3px;
 }
@@ -275,13 +289,21 @@ textarea:focus {
 	outline: 1px solid #066c65;
 }
 
-.upload-form button {
-	display: block;
-	margin: auto;
-	background-color: white;
+button {
+	background-color: transparent;
 	border: 1px solid rgb(116 116 116 / 50%);
 	border-radius: 3px;
 	padding: 0.2rem 1rem;
+	width: 5rem;
+}
+
+.upload-form select {
+	align-self: end;
+}
+
+.upload-form button {
+	display: block;
+	margin: 2rem auto;
 }
 
 main button:hover {
@@ -290,40 +312,65 @@ main button:hover {
 	outline: solid 2px #066c65;
 }
 
-.edit-list {
+.edit-page {
 	width: 80%;
+	display: flex;
+	flex-direction: column;
 }
 
-.edit-list li {
-	display: flex;
-	align-items: center;
-	justify-content: center;
+.edit-page select {
+	align-self: start;
+}
+
+.edit-page a {
+	align-self: end;
 	margin-top: 3rem;
-}
-
-.edit-list li .update-form {
-	display: flex;
-}
-
-.edit-list li .update-form button {
-	align-self: center;
-}
-
-.edit-list textarea {
-	width: 30rem;
-	min-height: 5rem;
-}
-
-.edit-list button {
 	background-color: white;
 	border: 1px solid rgb(116 116 116 / 50%);
 	border-radius: 3px;
 	padding: 0.2rem 1rem;
-	height: 2rem;
 }
 
-.edit-list button {
-	margin: 1rem;
+.edit-page a:hover {
+	background-color: #066c65;
+	color: white;
+	outline: solid 2px #066c65;
+}
+
+.edit-page ul {
+	width: 100%;
+}
+
+.edit-page ul li {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-top: 3rem;
+	gap: 1rem;
+}
+
+.edit-page ul li .update-form {
+	display: flex;
+	flex-grow: 1;
+	gap: 1rem;
+}
+
+.edit-page ul li .update-form select {
+	align-self: center;
+}
+
+.edit-page ul li .update-form button {
+	align-self: center;
+}
+
+.edit-page ul textarea {
+	width: 30rem;
+	min-height: 5rem;
+	flex-grow: 1;
+}
+
+.edit-page ul button {
+	height: 2rem;
 }
 
 #main-tategaki {
@@ -369,4 +416,53 @@ main button:hover {
 
 .genkou span {
 	padding: 0.1rem;
+}
+
+.main-page select {
+	position: fixed;
+	top: 2rem;
+	left: 2rem;
+	width: 5rem;
+
+}
+
+.category-page ul {
+	width: 50%;
+}
+
+.category-page ul li {
+	display: flex;
+	gap: 2rem;
+	align-items: center;
+	margin: 2rem auto;
+}
+
+.category-page ul li form:nth-child(2) {
+	display: flex;
+	align-items: center;
+	flex-grow: 1;
+	gap: 2rem;
+}
+
+.category-page ul li textarea {
+	flex-grow: 1;
+}
+
+.category-page ul li .delete-spacer {
+	width: 5rem;
+}
+
+.category-page ul li:last-child {
+	background-image: linear-gradient(to right, #066c65 4px, transparent 4px);
+	background-size: 11px 4px;
+	background-repeat: repeat-x;
+	background-position: left top;
+	margin: 4rem auto;
+}
+
+.category-page ul li:last-child form {
+	display: flex;
+	flex-grow: 1;
+	gap: 2rem;
+	margin-top: 4rem;
 }
