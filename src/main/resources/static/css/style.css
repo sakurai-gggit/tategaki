@@ -424,3 +424,38 @@ main button:hover {
 	width: 5rem;
 
 }
+
+.category-page ul {
+	width: 50%;
+}
+
+.category-page ul li {
+	display: flex;
+	gap: 2rem;
+	align-items: center;
+	margin: 2rem auto;
+}
+
+.category-page ul li form:nth-child(2) {
+	display: flex;
+	align-items: center;
+	flex-grow: 1;
+	gap: 2rem;
+}
+
+.category-page ul li textarea {
+	flex-grow: 1;
+}
+
+.category-page ul li:last-child form {
+	display: flex;
+	flex-grow: 1;
+	gap: 2rem;
+	padding-left: calc(16px + 2rem + 2rem);
+	background-image: linear-gradient(to right, #066c65 4px, transparent 4px);
+	background-size: 11px 4px;
+	background-repeat: repeat-x;
+	background-position: left top;
+	padding-top: 3rem;
+	margin-top: 1rem;
+}

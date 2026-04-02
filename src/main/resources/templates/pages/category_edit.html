@@ -2,7 +2,7 @@
 <html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layouts/layout}">
 
 <body>
-	<main layout:fragment="contents">
+	<main layout:fragment="contents" class="category-page">
 		<h2>カテゴリの編集</h2>
 		<h3>カテゴリの登録、編集、削除ができます</h3>
 		<ul>
@@ -17,11 +17,14 @@
 					<button type="submit">確定</button>
 				</form>
 			</li>
+			<li>
+				<form method="post" th:action="@{/category/add}">
+					<textarea name="categoryName"></textarea>
+					<button type="submit">追加</button>
+				</form>
+			</li>
 		</ul>
-		<form method="post" th:action="@{/category/add}">
-			<textarea name="categoryName"></textarea>
-			<button type="submit">追加</button>
-		</form>
+
 	</main>
 </body>
 
