@@ -95,13 +95,15 @@ public class PagesController {
 	}
 
 	@PostMapping("/add")
-	public String add(@RequestParam String content, @RequestParam Long categoryId,
+	public String add(@RequestParam String content, @RequestParam(required = false) Long categoryId,
 			RedirectAttributes redirectAttributes) {
 		Tanka tanka = new Tanka();
 		tanka.setContent(content);
-		categoryRepository.findById(categoryId).ifPresent(cate -> {
-			tanka.setCategory(cate);
-		});
+		if (categoryId != null) {
+			categoryRepository.findById(categoryId).ifPresent(cate -> {
+				tanka.setCategory(cate);
+			});
+		}
 		tankaRepository.saveAndFlush(tanka);
 		redirectAttributes.addFlashAttribute("message", "保存しました");
 		return "redirect:/upload";
