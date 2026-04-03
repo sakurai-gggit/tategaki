@@ -30,7 +30,7 @@ public class PagesController {
 	}
 
 	@GetMapping("/main")
-	public String mainPage(Model model, @RequestParam(value = "categoryId", required = false) Long categoryId,
+	public String mainPage(Model model, @RequestParam(required = false) Long categoryId,
 			@RequestParam(value = "currentId", required = false) Long currentId) {
 		Tanka tanka;
 		if (categoryId == null) {
@@ -76,7 +76,7 @@ public class PagesController {
 	}
 
 	@GetMapping("/edit")
-	public String editPage(@RequestParam(value = "categoryId", required = false) Long categoryId, Model model) {
+	public String editPage(@RequestParam(required = false) Long categoryId, Model model) {
 		List<Tanka> list;
 		if (categoryId == null) {
 			list = tankaRepository.findAll();
@@ -95,23 +95,30 @@ public class PagesController {
 	}
 
 	@PostMapping("/add")
-	public String add(@RequestParam String content, @RequestParam Long categoryId,
+	public String add(@RequestParam String content, @RequestParam(required = false) Long categoryId,
 			RedirectAttributes redirectAttributes) {
 		Tanka tanka = new Tanka();
 		tanka.setContent(content);
-		categoryRepository.findById(categoryId).ifPresent(cate -> {
-			tanka.setCategory(cate);
-		});
+		if (categoryId != null) {
+			categoryRepository.findById(categoryId).ifPresent(cate -> {
+				tanka.setCategory(cate);
+			});
+		}
 		tankaRepository.saveAndFlush(tanka);
 		redirectAttributes.addFlashAttribute("message", "保存しました");
 		return "redirect:/upload";
 	}
 
 	@PostMapping("/update")
-	public String update(@RequestParam String content, @RequestParam Long tankaId, @RequestParam Long categoryId) {
+	public String update(@RequestParam String content, @RequestParam Long tankaId,
+			@RequestParam(required = false) Long categoryId) {
 		Tanka tanka = tankaRepository.findById(tankaId).get();
 		tanka.setContent(content);
-		tanka.setCategory(categoryRepository.findById(categoryId).get());
+		if (categoryId != null) {
+			tanka.setCategory(categoryRepository.findById(categoryId).get());
+		} else {
+			tanka.setCategory(null);
+		}
 		tankaRepository.saveAndFlush(tanka);
 		return "redirect:/edit";
 	}
