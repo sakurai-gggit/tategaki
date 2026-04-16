@@ -48,7 +48,17 @@ main.main-page {
 
 .title {
 	writing-mode: vertical-rl;
-	margin: 2rem;
+	flex-direction: row;
+	margin: 5rem auto;
+}
+
+.title a {
+	padding: 2rem;
+}
+
+.title a:hover {
+	font-weight: bold;
+	color: #7e5d26;
 }
 
 header {
@@ -412,6 +422,7 @@ main button:hover {
 .genkou .br {
 	display: block;
 	flex-basis: 100%;
+	padding: 0;
 }
 
 .genkou span {
