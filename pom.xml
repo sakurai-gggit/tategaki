@@ -10,6 +10,7 @@
 	</parent>
 	<groupId>com.example.tategaki</groupId>
 	<artifactId>tategaki</artifactId>
+	<packaging>jar</packaging>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>tategaki</name>
 	<description>tategaki</description>
@@ -71,6 +72,11 @@
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-devtools</artifactId>
     <optional>true</optional>
+</dependency>
+<dependency>
+  <groupId>org.springframework.boot</groupId>
+  <artifactId>spring-boot-starter-tomcat</artifactId>
+  <scope>provided</scope>
 </dependency>
 	</dependencies>
 
